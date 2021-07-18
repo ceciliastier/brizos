@@ -1,0 +1,531 @@
+/* Reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+ul li a{
+    text-decoration: none;
+}
+
+/* Variables */
+:root{
+    --dark-blue: #1C222C;
+    --blue: #667ba065;
+    --teal: #D2E6E7;
+    --grey: #D2D2D2;
+}
+/* || Typography || */
+body, h3, h4, h5, p, ul li a, address, dl, dt, dd{
+    font-family: 'Nunito', sans-serif;
+    color: var(--dark-blue);
+}
+header nav ul li a{
+    color: #fff;
+}
+h1{
+    font-size: 2.1em;
+    border-bottom: solid 15px var(--teal);
+    line-height: 0;
+    display: inline-block;
+    padding: 0 3px;
+    font-family: lemonde-courrier,serif;
+    font-weight: 400;
+    font-style: normal;
+}
+h2{
+    font-size: 1.7em;
+    font-family: lemonde-courrier, serif;
+    font-weight: 400;
+    font-style: normal;
+}
+h3{
+    font-size: 1.5em;
+    font-family: lemonde-courrier, serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.2em;
+}
+h4{
+    font-size: 0.75em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+dt{
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-weight: 600;
+    line-height: 1.8em;
+}
+dd{
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.6em;
+}
+p{
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.6em;
+}
+footer ul li, footer address, footer p{
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.9em;
+}
+footer ul li a{
+    font-size: 1em;
+    text-decoration: underline;
+}
+.menu h3{
+    font-size: 1.5em;
+    font-weight: 400;
+}
+.verticle-inp p{
+    font-size: 1em;
+}
+.verticle-inp label{
+    font-size: .9em;
+}
+.info address{
+    font-size: 1em;
+    line-height: 2em;
+}
+.reviews h3{
+    font-size: 1.2em;
+}
+
+/* MOBILE STYLES */
+
+/*mobile menu */
+/* source for mobile menu code: https://www.youtube.com/watch?v=POxn1x3kAyY&list=PL4cUxeGkcC9htzG9o-QzCTsGMbmfuF4kk&index=5&t=0s&ab_channel=TheNetNinja */
+.navigation{
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+    width: 1px;
+}
+.main-nav ul{
+    width: 100vw;
+    margin-right: 50%;
+}
+.main-nav ul li{
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid var(--blue);
+}
+.main-nav ul li a{
+    padding: 15px;
+}
+input#drop-nav{
+	display: none;
+}
+/* mobile menu - toggle button */
+.navigation label{
+	text-indent: -100000px;
+    background: url(img/open-menu.png) no-repeat center;
+}
+input#drop-nav:checked ~ label{
+	background: url(img/close.png) no-repeat center;
+}
+.navigation label, input#drop-nav:checked ~ label{
+    padding: 30px 40px;
+    background-size: 25px
+}
+/* mobile menu - when menu is closed */
+.main-nav{
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s;
+}
+/* mobile menu - when menu is open */
+input#drop-nav:checked ~ .main-nav{
+    height: 285px;
+}
+/* mobile base styles*/
+body{
+    font-size: 16px;
+}
+/* header */
+header{
+    background-color: var(--dark-blue);
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 5%;
+    box-shadow: 0px 3px 13px -2px rgba(0, 0, 0, 0.35);
+}
+header a img{
+    width: 100px;
+    padding: 15px 0 0 20px;
+}
+/* main */
+.container{
+    text-align: center;
+}
+.container section, p{
+    text-align: left;
+}
+dt, dd, p, h3{
+    margin: 0 5%;
+}
+dt{
+    margin-top: 3%;
+}
+dd{
+    margin-bottom: 5%;
+}
+main img{
+    width: 100%;
+    margin-top: 3%;
+}
+h2{
+    display: inline-block;
+    margin: 3% 5%;
+}
+h1{
+    margin: 15% 0 12% 0;
+}
+h3{
+    margin-bottom: 3%;
+    margin-top: 5%;
+}
+.reviews section{
+    margin-bottom: 10%;
+}
+.center{
+    text-align: center;
+    padding-bottom: 5%;
+}
+.about-us img{
+    margin-bottom: 8%;
+}
+/* main - menu specific */
+.menu h3{
+    margin-bottom: 6%;
+    margin-left: 0;
+}
+.menu-specials{
+    background: var(--teal);
+    padding: 5%;
+    margin-bottom: 7%;
+}
+.menu-specials dd{
+    margin-bottom: 3%;
+}
+.menu-specials img{
+    margin-bottom: 3%;
+}
+.promise h3{
+    margin-top: 15%;
+    margin-bottom: 7%;
+    margin: 15% 5% 7% 5%;
+}
+/* main - reserve specific */
+.form-page{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.reserve img{
+    display: none;
+}
+.info{
+    margin: 10% 0;
+    text-align: center;
+    grid-column: 1/3;
+}
+.info h3{
+    margin: 0;
+    padding-bottom: 7%;
+}
+.info ul li{
+    padding: 3% 0;
+}
+.info address{
+    margin-bottom: 5%;
+} 
+/* main - forms */
+form{
+    text-align: left;
+    width: 70%;
+    max-width: 230px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.form-item{
+    padding: 6% 0;
+}
+label{
+    display: inline-block;
+    padding-right: 5%;
+    padding-bottom: 3%;
+}
+.form-item p{
+    margin: 0;
+    padding: 2% 0;
+}
+.verticle-inp-input{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 10%;
+}
+.verticle-inp-input input{
+    width: 50%;
+    height: 2em;
+    margin: 0;
+}
+.verticle-inp-input label{
+    padding-top: 5%;
+}
+input, textarea, input[type="number"], input[type="tel"], input[type="email"]{
+    width: 100%;
+}
+input, select{
+    box-sizing: border-box;
+    padding: 5% 2%;
+}
+input[type="submit"]{
+    width: 10em;
+    align-self: center;
+    background-color: var(--dark-blue);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    border: none;
+    padding: 8%;
+    margin: 10%;
+    box-shadow: 2px 3px 10px -2px rgba(0,0,0,0.35);
+}
+select{
+    margin-left: 5%;
+    margin: 1%;
+}
+select[id="month"]{
+    margin-bottom: 5%;
+}
+select[name="day"]{
+    margin-left: 13%;
+    padding-right: 5%;
+}
+select[name="time"]{
+    margin-left: 16%;
+}
+label[for="month"], label[for="day"]{
+    margin-left: 15%;
+}
+/* footer */
+footer{
+    background: var(--grey);
+    padding: 12%;
+    margin-top: 16%;
+    text-align: center;
+}
+footer section{
+    margin-top: 12%;
+}
+h4{
+    margin-bottom: 3%;
+}
+footer p{
+    text-align: center;
+    line-height: normal;
+    margin-top: 12%;
+}
+/* TABLET STYLES */
+@media screen and (min-width: 700px){
+    /* recentering and realigning content */
+    main{
+        width: 85%;
+        margin: 0 auto;
+    }
+    h2, dt, dd, h3, p{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    /* adjusting spacing */
+    h1{
+        margin: 5% 0;
+    }
+    /* form pages */
+    .form-page{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin: 0 10%;
+    }
+    .form-page .title{
+        grid-column: 1/3;
+    }
+    .info{
+        grid-column: 1/2;
+    }
+    form{
+        justify-self: center;
+        grid-column: 2/3;
+    }
+    .form-item input{
+        width: 17em;
+        padding: 2%;
+    }
+    .form-item input[type="radio"]{
+        width: 50px;
+    }
+    .form-item{
+        padding: 3% 0;
+    }
+    .verticle-inp-input{
+        padding-bottom: 2%;
+    }
+    .verticle-inp-input input{
+        height: auto;
+    }
+    .reserve img{
+        display: block;
+        margin-bottom: 15%;
+    }
+    /* contact page specific */
+    .center{
+        grid-column: 1/3;
+    }
+    .cnt-inf{
+        grid-row: 3;
+        text-align: left;
+        margin-top: 4%;
+    }
+    /* footer */
+    footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: start;
+        padding: 10%;
+        text-align: left;
+    }
+    .ft-item{
+        margin: 0;
+        justify-self: center;
+    }
+    .one{
+        grid-column: 2/3;
+    }
+    .two{
+        grid-column: 1/2;
+        grid-row: 1;
+    }
+    .three{
+        grid-column: 3/4;
+        grid-row: 1;
+    }
+    p.ft-item{
+        grid-column: 2/3;
+        margin-top: 15%;
+    }
+    footer ul li a{
+        text-decoration: none;
+    }
+    footer ul li a:hover{
+        text-decoration: underline;
+    }
+}
+/* DESKTOP STYLES*/
+@media screen and (min-width: 1000px){
+    body{
+        background-image: url(img/hero.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+    header{
+        position: fixed;
+        top: 0;
+        align-items: center;
+    }
+    header a img{
+        width: 100px;
+        padding: 10% 20%;
+    }
+    .navigation{
+        width: 100%;
+    }
+    .navigation input, .navigation label{
+        display: none;
+    }
+    .main-nav{
+        height: 100%;
+        overflow: auto;
+        margin-right: 3%;
+    }
+    .main-nav ul{
+        width: 100%;
+        display: flex;
+    }
+    .main-nav ul li{
+        border: none;
+    }
+    .main-nav ul li:hover {
+        background-color: var(--blue);
+    }
+    main{
+        background-color: rgba(255, 255, 255, 0.938);
+        padding: 5%;
+        box-sizing: border-box;
+        width: 900px;
+        margin-top: 10%;
+    }
+    footer{
+        padding: 5%;
+        box-sizing: border-box;
+        width: 900px;
+        margin: 0 auto;
+        margin-bottom: 10%;
+        background-color: #d2d2d2ea;
+    }
+}
